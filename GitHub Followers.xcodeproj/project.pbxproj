@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01F511827848EDD0066635A /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01F511727848EDD0066635A /* SearchVC.swift */; };
+		B01F511A27848F1B0066635A /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01F511927848F1B0066635A /* FavoritesListVC.swift */; };
+		B01F511C2784A72D0066635A /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01F511B2784A72D0066635A /* GFButton.swift */; };
+		B01F511E2784ABD80066635A /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01F511D2784ABD80066635A /* GFTextField.swift */; };
+		B04939932784BD4500185A33 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04939922784BD4500185A33 /* FollowerListVC.swift */; };
 		B0B056E8278483AC00C24CF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B056E7278483AC00C24CF3 /* AppDelegate.swift */; };
 		B0B056EA278483AC00C24CF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B056E9278483AC00C24CF3 /* SceneDelegate.swift */; };
-		B0B056EC278483AC00C24CF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B056EB278483AC00C24CF3 /* ViewController.swift */; };
-		B0B056EF278483AC00C24CF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B056ED278483AC00C24CF3 /* Main.storyboard */; };
 		B0B056F1278483AD00C24CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B056F0278483AD00C24CF3 /* Assets.xcassets */; };
 		B0B056F4278483AD00C24CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B056F2278483AD00C24CF3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B01F511727848EDD0066635A /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		B01F511927848F1B0066635A /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
+		B01F511B2784A72D0066635A /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
+		B01F511D2784ABD80066635A /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
+		B04939922784BD4500185A33 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		B0B056E4278483AC00C24CF3 /* GitHub Followers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub Followers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B056E7278483AC00C24CF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B056E9278483AC00C24CF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B0B056EB278483AC00C24CF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B0B056EE278483AC00C24CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0B056F0278483AD00C24CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0B056F3278483AD00C24CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0B056F5278483AD00C24CF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,11 +64,14 @@
 			children = (
 				B0B056E7278483AC00C24CF3 /* AppDelegate.swift */,
 				B0B056E9278483AC00C24CF3 /* SceneDelegate.swift */,
-				B0B056EB278483AC00C24CF3 /* ViewController.swift */,
-				B0B056ED278483AC00C24CF3 /* Main.storyboard */,
+				B01F511927848F1B0066635A /* FavoritesListVC.swift */,
+				B01F511727848EDD0066635A /* SearchVC.swift */,
 				B0B056F0278483AD00C24CF3 /* Assets.xcassets */,
 				B0B056F2278483AD00C24CF3 /* LaunchScreen.storyboard */,
 				B0B056F5278483AD00C24CF3 /* Info.plist */,
+				B01F511B2784A72D0066635A /* GFButton.swift */,
+				B01F511D2784ABD80066635A /* GFTextField.swift */,
+				B04939922784BD4500185A33 /* FollowerListVC.swift */,
 			);
 			path = "GitHub Followers";
 			sourceTree = "<group>";
@@ -127,7 +136,6 @@
 			files = (
 				B0B056F4278483AD00C24CF3 /* LaunchScreen.storyboard in Resources */,
 				B0B056F1278483AD00C24CF3 /* Assets.xcassets in Resources */,
-				B0B056EF278483AC00C24CF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0B056EC278483AC00C24CF3 /* ViewController.swift in Sources */,
+				B01F511E2784ABD80066635A /* GFTextField.swift in Sources */,
+				B01F511A27848F1B0066635A /* FavoritesListVC.swift in Sources */,
+				B01F511C2784A72D0066635A /* GFButton.swift in Sources */,
+				B01F511827848EDD0066635A /* SearchVC.swift in Sources */,
+				B04939932784BD4500185A33 /* FollowerListVC.swift in Sources */,
 				B0B056E8278483AC00C24CF3 /* AppDelegate.swift in Sources */,
 				B0B056EA278483AC00C24CF3 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +159,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B0B056ED278483AC00C24CF3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0B056EE278483AC00C24CF3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B0B056F2278483AD00C24CF3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -293,7 +297,7 @@
 				INFOPLIST_FILE = "GitHub Followers/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +324,7 @@
 				INFOPLIST_FILE = "GitHub Followers/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
