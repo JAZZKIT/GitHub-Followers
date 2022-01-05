@@ -16,6 +16,14 @@
 		B0B056EA278483AC00C24CF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B056E9278483AC00C24CF3 /* SceneDelegate.swift */; };
 		B0B056F1278483AD00C24CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B056F0278483AD00C24CF3 /* Assets.xcassets */; };
 		B0B056F4278483AD00C24CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B056F2278483AD00C24CF3 /* LaunchScreen.storyboard */; };
+		B0C504632785E45B006D4D11 /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C504622785E45B006D4D11 /* GFTitleLabel.swift */; };
+		B0C504652785E615006D4D11 /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C504642785E615006D4D11 /* GFBodyLabel.swift */; };
+		B0C504672785E6CF006D4D11 /* GFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C504662785E6CF006D4D11 /* GFAlertVC.swift */; };
+		B0C504692785EC01006D4D11 /* GFContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C504682785EC01006D4D11 /* GFContainerView.swift */; };
+		B0C5046B2785F2C4006D4D11 /* UIViewContoller+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5046A2785F2C4006D4D11 /* UIViewContoller+Ext.swift */; };
+		B0C50472278604F5006D4D11 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C50471278604F5006D4D11 /* Follower.swift */; };
+		B0C5047427860533006D4D11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5047327860533006D4D11 /* User.swift */; };
+		B0C5047727860B40006D4D11 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5047627860B40006D4D11 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		B0B056F0278483AD00C24CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0B056F3278483AD00C24CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0B056F5278483AD00C24CF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0C504622785E45B006D4D11 /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
+		B0C504642785E615006D4D11 /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
+		B0C504662785E6CF006D4D11 /* GFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertVC.swift; sourceTree = "<group>"; };
+		B0C504682785EC01006D4D11 /* GFContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFContainerView.swift; sourceTree = "<group>"; };
+		B0C5046A2785F2C4006D4D11 /* UIViewContoller+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewContoller+Ext.swift"; sourceTree = "<group>"; };
+		B0C50471278604F5006D4D11 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		B0C5047327860533006D4D11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B0C5047627860B40006D4D11 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +78,74 @@
 		B0B056E6278483AC00C24CF3 /* GitHub Followers */ = {
 			isa = PBXGroup;
 			children = (
+				B0C5047527860B25006D4D11 /* Managers */,
+				B0C50470278604E7006D4D11 /* Model */,
+				B0C5046F2785FED7006D4D11 /* Support */,
+				B0C5046E2785FE75006D4D11 /* Extensions */,
+				B0C5046D2785FE39006D4D11 /* Custom Views */,
+				B0C5046C2785FD95006D4D11 /* Screens */,
+			);
+			path = "GitHub Followers";
+			sourceTree = "<group>";
+		};
+		B0C5046C2785FD95006D4D11 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B01F511727848EDD0066635A /* SearchVC.swift */,
+				B01F511927848F1B0066635A /* FavoritesListVC.swift */,
+				B04939922784BD4500185A33 /* FollowerListVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B0C5046D2785FE39006D4D11 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0C504662785E6CF006D4D11 /* GFAlertVC.swift */,
+				B01F511B2784A72D0066635A /* GFButton.swift */,
+				B01F511D2784ABD80066635A /* GFTextField.swift */,
+				B0C504622785E45B006D4D11 /* GFTitleLabel.swift */,
+				B0C504642785E615006D4D11 /* GFBodyLabel.swift */,
+				B0C504682785EC01006D4D11 /* GFContainerView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		B0C5046E2785FE75006D4D11 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B0C5046A2785F2C4006D4D11 /* UIViewContoller+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B0C5046F2785FED7006D4D11 /* Support */ = {
+			isa = PBXGroup;
+			children = (
 				B0B056E7278483AC00C24CF3 /* AppDelegate.swift */,
 				B0B056E9278483AC00C24CF3 /* SceneDelegate.swift */,
-				B01F511927848F1B0066635A /* FavoritesListVC.swift */,
-				B01F511727848EDD0066635A /* SearchVC.swift */,
 				B0B056F0278483AD00C24CF3 /* Assets.xcassets */,
 				B0B056F2278483AD00C24CF3 /* LaunchScreen.storyboard */,
 				B0B056F5278483AD00C24CF3 /* Info.plist */,
-				B01F511B2784A72D0066635A /* GFButton.swift */,
-				B01F511D2784ABD80066635A /* GFTextField.swift */,
-				B04939922784BD4500185A33 /* FollowerListVC.swift */,
 			);
-			path = "GitHub Followers";
+			path = Support;
+			sourceTree = "<group>";
+		};
+		B0C50470278604E7006D4D11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0C50471278604F5006D4D11 /* Follower.swift */,
+				B0C5047327860533006D4D11 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0C5047527860B25006D4D11 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B0C5047627860B40006D4D11 /* NetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +222,15 @@
 				B01F511A27848F1B0066635A /* FavoritesListVC.swift in Sources */,
 				B01F511C2784A72D0066635A /* GFButton.swift in Sources */,
 				B01F511827848EDD0066635A /* SearchVC.swift in Sources */,
+				B0C504672785E6CF006D4D11 /* GFAlertVC.swift in Sources */,
+				B0C504652785E615006D4D11 /* GFBodyLabel.swift in Sources */,
+				B0C5047427860533006D4D11 /* User.swift in Sources */,
+				B0C504632785E45B006D4D11 /* GFTitleLabel.swift in Sources */,
+				B0C50472278604F5006D4D11 /* Follower.swift in Sources */,
+				B0C5046B2785F2C4006D4D11 /* UIViewContoller+Ext.swift in Sources */,
+				B0C504692785EC01006D4D11 /* GFContainerView.swift in Sources */,
 				B04939932784BD4500185A33 /* FollowerListVC.swift in Sources */,
+				B0C5047727860B40006D4D11 /* NetworkManager.swift in Sources */,
 				B0B056E8278483AC00C24CF3 /* AppDelegate.swift in Sources */,
 				B0B056EA278483AC00C24CF3 /* SceneDelegate.swift in Sources */,
 			);
@@ -294,7 +374,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GitHub Followers/Info.plist";
+				INFOPLIST_FILE = "GitHub Followers/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -321,7 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GitHub Followers/Info.plist";
+				INFOPLIST_FILE = "GitHub Followers/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
