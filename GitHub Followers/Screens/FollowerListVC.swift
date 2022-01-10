@@ -9,12 +9,13 @@ import UIKit
 
 class FollowerListVC: UIViewController {
     
-    enum Section {
-        case main
-    }
+    enum Section { case main }
     
     var username: String!
     var followers: [Follower] = []
+    var filteredFollowers: [Follower] = []
+    var page = 1
+    var hasMoreFollowers = true
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -22,8 +23,9 @@ class FollowerListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
+        configureSearchContoller()
         configureCollectionView()
-        getFollowers()
+        getFollowers(user: username, page: page)
         configureDataSource()
     }
     
@@ -38,32 +40,36 @@ class FollowerListVC: UIViewController {
     }
     
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         view.addSubview(collectionView)
-        collectionView.backgroundColor = .systemPink
+        collectionView.delegate = self
+        collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
     
-    func createThreeColumnFlowLayout() -> UICollectionViewFlowLayout{
-        let width = view.bounds.width
-        let padding: CGFloat = 12
-        let minimunItemSpacing: CGFloat = 10
-        let availableWidth = width - (padding * 2) - (minimunItemSpacing * 2)
-        let itemWidth = availableWidth / 3
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth + 40) //TODO: check
-        
-        return flowLayout
+    func configureSearchContoller() {
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search for a username"
+        navigationItem.searchController = searchController
     }
     
-    func getFollowers() {
-        NetworkManager.shared.getFollowers(for: username, page: 1) { result in
+    func getFollowers(user: String, page: Int) {
+        showLoadingView()
+        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
+            guard let self = self else { return }
+            self.dismissLoadingView()
             switch result {
             case .success(let followers):
-                self.followers = followers
-                self.updateData()
+                if followers.count < 100 { self.hasMoreFollowers = false }
+                self.followers.append(contentsOf: followers)
+                if self.followers.isEmpty {
+                    let message = "This user doesn't have ant followers. Go follow them ☺️."
+                    DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
+                    return
+                }
+                self.updateData(on: self.followers)
                 
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Bad Stuff", message: error.rawValue, buttonTitle: "Ok")
@@ -79,7 +85,7 @@ class FollowerListVC: UIViewController {
         })
     }
     
-    func updateData() {
+    func updateData(on followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
@@ -87,5 +93,32 @@ class FollowerListVC: UIViewController {
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
+    }
+}
+
+extension FollowerListVC: UICollectionViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+
+        if offsetY > contentHeight - height {
+            guard hasMoreFollowers else { return }
+            page += 1
+            getFollowers(user: username, page: page)
+        }
+    }
+}
+
+extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        
+        filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased())}
+        updateData(on: filteredFollowers)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        updateData(on: followers)
     }
 }
