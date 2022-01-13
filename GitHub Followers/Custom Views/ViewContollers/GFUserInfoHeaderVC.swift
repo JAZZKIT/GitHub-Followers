@@ -59,7 +59,6 @@ class GFUserInfoHeaderVC: UIViewController {
         let padding: CGFloat = 20
         let textImagePadding: CGFloat = 12
         locationImageView.translatesAutoresizingMaskIntoConstraints = false
-        #warning("check") //  nameLabel.centerYAnchor.constrain 8
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
             avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
