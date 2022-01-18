@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         }
         
-        
         // Disabling automatic transparent tabBar in iOS 15
         if #available(iOS 13.0, *) {
             let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
@@ -32,8 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
         }
-
-
+        
         return true
     }
 
